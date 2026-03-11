@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Conference | ICA-TH 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ============================================================
+           VARIABLES
+        ============================================================ */
+        :root {
+            --primary:    #1a3a5f;
+            --secondary:  #274c77;
+            --accent:     #ffb400;
+            --light-bg:   #f8fafc;
+            --white:      #ffffff;
+            --text-main:  #1e293b;
+            --text-muted: #64748b;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+
+        /* ============================================================
+           GLOBAL
+        ============================================================ */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+
+        /* ============================================================
+           NAVBAR
+        ============================================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 12px;
+            padding: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .site-title {
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .site-title span:first-child {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .site-title span:last-child {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-menu a:hover { color: var(--accent); }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            list-style: none;
+            padding: 12px 0;
+            margin: 0;
+            min-width: 250px;
+            display: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid #f1f5f9;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 15px;
+        }
+
+        .dropdown-menu.active { display: block; }
+
+        .dropdown-menu li a {
+            color: var(--text-main) !important;
+            padding: 12px 24px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .dropdown-menu li:hover { background: #f8fafc; }
+        .dropdown-menu li:hover a { color: var(--primary) !important; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu { display: block; margin-top: 15px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+            .hamburger { display: flex; }
+            .logo { width: 38px; height: 38px; }
+            .site-title span:last-child { font-size: 13px; }
+            .site-title span:first-child { display: none; }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-top: 1px solid #f1f5f9;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                display: none;
+            }
+
+            nav.open { display: block; }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 0;
+            }
+
+            .nav-menu > li > a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 15px;
+                border-bottom: 1px solid #f8fafc;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background: #f8fafc;
+                padding: 0;
+                margin: 0;
+                display: none;
+            }
+
+            .dropdown-menu.active { display: block; }
+
+            .dropdown-menu li a {
+                padding: 10px 36px !important;
+                font-size: 14px;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .dropdown::after { display: none; }
+        }
+
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+        .about-hero {
+            background:
+                linear-gradient(135deg, rgba(15, 47, 87, 0.88) 0%, rgba(39, 76, 119, 0.75) 100%),
+                url("im/business-executives-participating-business-meeting.jpg") center / cover no-repeat;
+            background-attachment: fixed;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 20px;
+            line-height: 1.1;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 80px 20px;
+                background-attachment: scroll;
+            }
+            .about-hero h1 { font-size: 30px; }
+            .about-hero p  { font-size: 15px; }
+        }
+
+
+        /* ============================================================
+           CONTENT SECTIONS
+        ============================================================ */
+        .content-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .content-section:last-of-type { border-bottom: none; }
+
+        .content-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 20px;
+            position: relative;
+            padding-bottom: 16px;
+            display: block;
+            text-align: center;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 50px; height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .content-section p {
+            font-size: 17px;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            max-width: 100%;
+            line-height: 1.8;
+        }
+
+        .content-section p:last-child { margin-bottom: 0; }
+
+        /* --- What It Is: split layout --- */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .split-layout .split-text p { max-width: 100%; }
+
+        .split-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(26, 58, 95, 0.12);
+            aspect-ratio: 4 / 3;
+            background: #f0f4f8;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .split-image img[data-error="true"] { display: none; }
+        .split-image:hover img { transform: scale(1.03); }
+
+        /* hide image column if broken — fallback to full-width text */
+        .split-layout.no-image {
+            grid-template-columns: 1fr;
+        }
+
+        .split-layout.no-image .split-image { display: none; }
+
+        /* --- Why Now: parallax banner --- */
+        .why-now-section {
+            position: relative;
+            padding: 100px 0;
+            background:
+                linear-gradient(rgba(15, 47, 87, 0.82), rgba(15, 47, 87, 0.82)),
+                url("im/downtown-business-district-bangkok-night.jpg") center / cover no-repeat;
+            background-attachment: fixed;
+            border-bottom: none;
+        }
+
+        .why-now-section h2 { color: white; }
+        .why-now-section h2::after { background: var(--accent); }
+
+        .why-now-section .why-now-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 56px;
+            margin-top: 36px;
+        }
+
+        .why-now-section p {
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 100%;
+            margin-bottom: 0;
+        }
+
+        .why-now-section strong { color: white; }
+
+        /* Who It Is For — 2 columns */
+        .who-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 56px;
+            margin-top: 8px;
+        }
+
+        .who-body p { max-width: 100%; }
+
+        @media (max-width: 768px) {
+            .content-section       { padding: 56px 0; }
+            .content-section h2    { font-size: 26px; }
+            .content-section p     { font-size: 16px; }
+
+            .split-layout          { grid-template-columns: 1fr; gap: 36px; }
+            .split-image           { aspect-ratio: 16 / 9; }
+
+            .why-now-section {
+                background-attachment: scroll;
+                padding: 72px 0;
+            }
+
+            .why-now-section .why-now-body { grid-template-columns: 1fr; gap: 20px; }
+            .who-body                      { grid-template-columns: 1fr; gap: 0; }
+        }
+
+
+        /* ============================================================
+           OBJECTIVE CARDS
+        ============================================================ */
+        .objectives-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .objectives-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 16px;
+            position: relative;
+            padding-bottom: 16px;
+            display: block;
+            text-align: center;
+        }
+
+        .objectives-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 50px; height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .objectives-intro {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin: 0 auto 48px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+        }
+
+        .objective-card {
+            background: white;
+            padding: 36px 30px;
+            border-radius: 20px;
+            border: 1px solid #f1f5f9;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 58, 95, 0.09);
+        }
+
+        /* Number badge */
+        .obj-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .objective-card h3 {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            line-height: 1.3;
+        }
+
+        .objective-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        /* 3-on-top, 2-on-bottom layout */
+        .objective-card:nth-child(1) { grid-column: 1 / span 2; }
+        .objective-card:nth-child(2) { grid-column: 3 / span 2; }
+        .objective-card:nth-child(3) { grid-column: 5 / span 2; }
+        .objective-card:nth-child(4) { grid-column: 2 / span 2; }
+        .objective-card:nth-child(5) { grid-column: 4 / span 2; }
+
+        @media (max-width: 992px) {
+            .objectives { grid-template-columns: repeat(2, 1fr); }
+            .objective-card { grid-column: auto !important; }
+        }
+
+        @media (max-width: 600px) {
+            .objectives { grid-template-columns: 1fr; }
+            .objectives-section { padding: 56px 0; }
+        }
+
+
+        /* ============================================================
+           CTA
+        ============================================================ */
+        .cta {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 16px;
+            color: white;
+        }
+
+        .cta p {
+            font-size: 17px;
+            opacity: 0.85;
+            margin: 0 auto 36px;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 8px;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .cta { padding: 72px 20px; }
+            .cta h2 { font-size: 26px; }
+            .btn { display: block; margin: 8px auto; max-width: 260px; text-align: center; }
+        }
+
+
+        /* ============================================================
+           ORGANIZERS
+        ============================================================ */
+        .organizers {
+            background: #f8fafc;
+            padding: 64px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .org-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .org-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 56px;
+        }
+
+        .org-group-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .org-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+        }
+
+        .org-logos img {
+            height: 64px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            filter: grayscale(30%);
+            transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .org-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.06);
+        }
+
+        .org-divider {
+            width: 1px;
+            height: 72px;
+            background: #e2e8f0;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .organizers    { padding: 48px 0; }
+            .org-row       { flex-direction: column; gap: 36px; }
+            .org-group     { padding: 0 24px; width: 100%; align-items: center; text-align: center; }
+            .org-divider   { width: 60px; height: 1px; }
+            .org-logos img { height: 50px; }
+        }
+
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .site-footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.65);
+            padding: 60px 0 32px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .footer-about {
+            font-size: 14px;
+            line-height: 1.75;
+            margin-top: 16px;
+        }
+
+        .footer-col ul          { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li       { margin-bottom: 10px; }
+        .footer-col ul li a     { font-size: 14px; color: rgba(255, 255, 255, 0.65); transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--white); }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255, 255, 255, 0.4);
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a       { color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a:hover { color: var(--white); }
+
+        @media (max-width: 1024px) {
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-top    { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+         NAVBAR
+    ============================================================ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-group">
+                    <img src="im/Chula_Logo_Update_pp.png" class="logo" alt="Chula Logo">
+                    <img src="im/ICA26 regional hub - bangkok logo.jpg" class="logo" alt="ICA Logo">
+                </div>
+                <div class="site-title">
+                    <span>76th ANNUAL ICA</span>
+                    <span>REGIONAL HUB THAILAND</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" id="confInfoLink">Conference Information ▾</a>
+                        <ul class="dropdown-menu" id="confDropdown">
+                            <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                            <li><a href="Publication.html">Publication</a></li>
+                            <li><a href="Award.html">Award</a></li>
+                            <li><a href="visa.html">Visa Information</a></li>
+                            <li><a href="#">Travel Information</a></li>
+                            <li><a href="#">Blog Section</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About the Conference</h1>
+            <p>ICA Regional Hub Thailand 2026 brings together scholars, practitioners, and policymakers to explore communication inequalities and advance research collaboration across Thailand, the Mekong region, and the Global South.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTENT SECTIONS
+    ============================================================ -->
+    <div class="container">
+
+        <section class="content-section">
+            <h2>What It Is</h2>
+            <div class="split-layout">
+                <div class="split-text">
+                    <p>The ICA Regional Hub Thailand 2026 is a two-day academic conference held on <strong>6–7 June 2026</strong> at the Faculty of Communication Arts, <strong>Chulalongkorn University, Bangkok, Thailand</strong>.</p>
+                    <p>It is an official concurrent event of the <strong>76th Annual Conference of the International Communication Association (ICA)</strong>, running in parallel with the main conference in Cape Town.</p>
+                    <p>The Hub operates in a <strong>hybrid format</strong>, enabling in-person participation in Bangkok alongside live virtual attendance from anywhere in the world.</p>
+                    <p>The conference is hosted by the Faculty of Communication Arts, Chulalongkorn University, and the Asian Network for Public Opinion Research (ANPOR), in partnership with additional co-hosting institutions to be confirmed.</p>
+                </div>
+                <div class="split-image">
+                    <img src="im/conference.jpg" alt="Chulalongkorn University — Faculty of Communication Arts"
+                         onerror="this.closest('.split-layout').classList.add('no-image')">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Why Now — full-width parallax banner -->
+    <section class="content-section why-now-section">
+        <div class="container">
+            <h2>Why Now</h2>
+            <p>As a dynamic hub of Southeast Asia and the Mekong region, Thailand is confronting rapid digital transformation, expanding AI systems, platform-driven misinformation, and widening socio-economic divides that are reshaping communication in ways that often deepen — rather than resolve — inequality.</p>
+            <p>Yet the scholarly communities most deeply embedded in these realities — in Thailand and across the wider Global South — remain structurally underrepresented in flagship international journals and conferences.</p>
+            <p>At the moment when ICA 2026 centres on <strong>"Communication and Inequalities in Context,"</strong> ICA-TH 2026 positions Thailand not merely as host, but as a convening centre for global dialogue.</p>
+            <p>From Bangkok, conversations expand outward — connecting Southeast Asia, the Global South, and the wider international community.</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <section class="content-section">
+            <h2>Who It Is For</h2>
+            <p>The conference welcomes communication scholars at all career stages — from doctoral researchers to senior faculty — alongside media practitioners, platform policymakers, civil society advocates, journalists, and public health communicators working in or on the Thailand-Mekong-Asian region.</p>
+            <p>Both <strong>in-person attendance in Bangkok</strong> and <strong>virtual participation</strong> are fully supported.</p>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================================
+         FIVE OBJECTIVES
+    ============================================================ -->
+    <section class="objectives-section">
+        <div class="container">
+            <h2>Five Conference Objectives</h2>
+            <p class="objectives-intro">Guiding the research agenda and shaping outcomes across both days of the conference.</p>
+
+            <div class="objectives">
+
+                <div class="objective-card">
+                    <div class="obj-number">01</div>
+                    <h3>Regional Research Capacity</h3>
+                    <p>Strengthen research capacity through mentorship, publication guidance, and methodological training for scholars from Thailand and the Mekong region.</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="obj-number">02</div>
+                    <h3>Global Visibility</h3>
+                    <p>Amplify Thailand and Mekong scholarship in global ICA dialogue through hybrid programme integration and a live-streamed Global South Plenary.</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="obj-number">03</div>
+                    <h3>Inclusive Knowledge Production</h3>
+                    <p>Challenge structural inequalities in academic publishing and promote contextually grounded theory from the Global South.</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="obj-number">04</div>
+                    <h3>Regional Research Network</h3>
+                    <p>Establish the Thailand–Mekong Communication Research Consortium and develop thematic regional research working groups.</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="obj-number">05</div>
+                    <h3>Academic &amp; Policy Outputs</h3>
+                    <p>Produce the Bangkok Hub Report, special journal issue proposals, and collaborative multi-country research grants.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CTA
+    ============================================================ -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join the ICA-TH 2026 Community</h2>
+            <p>Submit your research, participate in discussions, and connect with scholars from across the Global South.</p>
+            <a class="btn btn-white" href="submission.html">Submit Your Abstract</a>
+            <a class="btn btn-outline" href="registration.html">Register to Attend</a>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         ORGANIZERS
+    ============================================================ -->
+    <section class="organizers">
+        <div class="container">
+            <div class="org-row">
+
+                <div class="org-group">
+                    <span class="org-group-label">Organized by</span>
+                    <div class="org-logos">
+                        <img src="im/LOGO_Eng.jpg" alt="Organizer 1">
+                        <img src="im/1008453.png" alt="Organizer 2">
+                    </div>
+                </div>
+
+                <div class="org-divider"></div>
+
+                <div class="org-group">
+                    <span class="org-group-label">In Partnership with</span>
+                    <div class="org-logos">
+                        <img src="im/logooo-1.jpg" alt="Partner">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <div style="margin-bottom: 4px;">
+                        <div style="color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1px; margin-bottom: 4px;">76TH ANNUAL ICA</div>
+                        <div style="color: var(--white); font-size: 17px; font-weight: 700;">Regional Hub Thailand</div>
+                    </div>
+                    <p class="footer-about">
+                        An official concurrent event of the 76th Annual ICA Conference, hosted at Chulalongkorn University, Bangkok — 6–7 June 2026.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                        <li><a href="visa.html">Visa Information</a></li>
+                        <li><a href="#">Publication</a></li>
+                        <li><a href="#">Awards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Faculty of Communication Arts,<br>Chulalongkorn University,<br>Bangkok, Thailand</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.65);">Contact Us</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <a href="https://www.icahdq.org" target="_blank" style="color: rgba(255,255,255,0.65);">icahdq.org</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ICA Thailand Hub · Faculty of Communication Arts, Chulalongkorn University</p>
+                <p>
+                    <a href="#">Privacy Policy</a> ·
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger    = document.getElementById('hamburger');
+            const mainNav      = document.getElementById('mainNav');
+            const toggleLink   = document.getElementById('confInfoLink');
+            const dropdownMenu = document.getElementById('confDropdown');
+
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+
+            toggleLink.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('active');
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                    hamburger.classList.remove('open');
+                    mainNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

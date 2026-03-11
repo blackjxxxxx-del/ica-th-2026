@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Submit Abstract | ICA-TH 2026</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f7fb;
+color:#333;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+}
+
+h1{
+font-size:40px;
+color:#1c3b64;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:40px;
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+label{
+display:block;
+margin-top:20px;
+font-weight:600;
+}
+
+input, textarea, select{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:15px;
+}
+
+textarea{
+height:180px;
+resize:vertical;
+}
+
+.file-upload{
+border:2px dashed #ccc;
+padding:20px;
+text-align:center;
+margin-top:10px;
+border-radius:8px;
+background:#fafafa;
+}
+
+.submit-btn{
+margin-top:30px;
+background:#1c3b64;
+color:white;
+border:none;
+padding:14px 25px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+background:#0e2747;
+}
+
+.note{
+margin-top:20px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Submit Your Abstract</h1>
+
+<p class="subtitle">
+Submit your abstract to ICA-TH 2026. Accepted submissions will be included in the conference programme.
+</p>
+
+<div class="form-box">
+
+<form>
+
+<label>Author Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" placeholder="example@email.com" required>
+
+<label>Institution / University</label>
+<input type="text" placeholder="Your institution">
+
+<label>Country</label>
+<input type="text" placeholder="Country">
+
+<label>Paper Title</label>
+<input type="text" placeholder="Enter paper title" required>
+
+<label>Select Research Track</label>
+<select>
+<option>Communication Inequalities</option>
+<option>Digital Media & AI</option>
+<option>Political Communication</option>
+<option>Health Communication</option>
+<option>Media & Society</option>
+<option>Other</option>
+</select>
+
+<label>Abstract (max 300 words)</label>
+<textarea placeholder="Paste your abstract here..."></textarea>
+
+<label>Upload Full Abstract File (PDF / DOCX)</label>
+
+<div class="file-upload">
+<input type="file" accept=".pdf,.doc,.docx">
+</div>
+
+<button class="submit-btn">
+Submit Abstract
+</button>
+
+<p class="note">
+Accepted file formats: PDF, DOC, DOCX. Maximum file size: 10MB.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

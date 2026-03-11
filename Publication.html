@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication Opportunities | ICA-TH 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ============================================================
+           VARIABLES
+        ============================================================ */
+        :root {
+            --primary:    #1a3a5f;
+            --secondary:  #274c77;
+            --accent:     #ffb400;
+            --light-bg:   #f8fafc;
+            --white:      #ffffff;
+            --text-main:  #1e293b;
+            --text-muted: #64748b;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================================================
+           GLOBAL
+        ============================================================ */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1200px; margin: auto; padding: 0 24px; }
+        a { text-decoration: none; transition: var(--transition); }
+
+        /* ============================================================
+           NAVBAR
+        ============================================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 20px; }
+        .logo-group { display: flex; gap: 12px; padding: 0; }
+        .logo { width: 50px; height: 50px; object-fit: contain; }
+
+        .site-title { color: var(--primary); display: flex; flex-direction: column; line-height: 1.2; }
+        .site-title span:first-child { font-size: 11px; font-weight: 500; letter-spacing: 1px; color: var(--text-muted); }
+        .site-title span:last-child  { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+
+        .nav-menu { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu a { color: var(--secondary); font-size: 14px; font-weight: 600; }
+        .nav-menu a:hover { color: var(--accent); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: white;
+            list-style: none; padding: 12px 0; margin: 0; min-width: 250px;
+            display: none; border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12); border: 1px solid #f1f5f9;
+        }
+
+        .dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 15px; }
+        .dropdown-menu.active { display: block; }
+        .dropdown-menu li a { color: var(--text-main) !important; padding: 12px 24px; font-weight: 500; display: block; }
+        .dropdown-menu li:hover { background: #f8fafc; }
+        .dropdown-menu li:hover a { color: var(--primary) !important; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        @media (min-width: 769px) { .dropdown:hover .dropdown-menu { display: block; margin-top: 15px; } }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+            .hamburger { display: flex; }
+            .logo { width: 38px; height: 38px; }
+            .site-title span:last-child  { font-size: 13px; }
+            .site-title span:first-child { display: none; }
+            nav { position: absolute; top: 100%; left: 0; width: 100%; background: white; border-top: 1px solid #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: none; }
+            nav.open { display: block; }
+            .nav-menu { flex-direction: column; align-items: stretch; gap: 0; padding: 12px 0; }
+            .nav-menu > li > a { display: block; padding: 12px 24px; font-size: 15px; border-bottom: 1px solid #f8fafc; }
+            .dropdown-menu { position: static; box-shadow: none; border: none; border-radius: 0; background: #f8fafc; padding: 0; margin: 0; display: none; }
+            .dropdown-menu.active { display: block; }
+            .dropdown-menu li a { padding: 10px 36px !important; font-size: 14px; border-bottom: 1px solid #f1f5f9; }
+            .dropdown::after { display: none; }
+        }
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+        .hero {
+            background:
+                linear-gradient(135deg, rgba(15, 47, 87, 0.88) 0%, rgba(39, 76, 119, 0.75) 100%),
+                url("im/people-taking-part-business-event.jpg") center / cover no-repeat;
+            background-attachment: fixed;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 { font-size: 48px; font-weight: 800; margin: 0 0 20px; line-height: 1.1; }
+        .hero p  { font-size: 18px; max-width: 800px; margin: 0 auto; opacity: 0.9; font-weight: 300; line-height: 1.7; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 20px; background-attachment: scroll; }
+            .hero h1 { font-size: 30px; }
+            .hero p  { font-size: 15px; }
+        }
+
+        /* ============================================================
+           SECTION BASE
+        ============================================================ */
+        .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+        .section:last-of-type { border-bottom: none; }
+
+        .section-title {
+            font-size: 32px; font-weight: 700; color: var(--primary);
+            margin: 0 0 16px; position: relative; padding-bottom: 16px;
+            display: block;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 50px; height: 4px; background: var(--accent); border-radius: 2px;
+        }
+
+        .section-title--center { display: block; text-align: center; }
+        .section-title--center::after { left: 50%; transform: translateX(-50%); }
+
+        .section-intro {
+            font-size: 17px; color: var(--text-muted);
+            max-width: 760px; line-height: 1.8; margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) { .section { padding: 56px 0; } .section-title { font-size: 26px; display: block; text-align: center; } }
+
+        /* ============================================================
+           INTRO OVERVIEW — 3 stat boxes
+        ============================================================ */
+        .overview-section { padding: 80px 0; background: var(--light-bg); border-bottom: 1px solid #f1f5f9; }
+
+        .overview-lead {
+            font-size: 18px; color: var(--text-muted);
+            max-width: 820px; margin: 16px auto 56px; line-height: 1.8;
+            text-align: center;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat-box {
+            background: white;
+            border-radius: 20px;
+            padding: 36px 28px;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-box:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(26,58,95,0.09); }
+
+        .stat-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+
+        .stat-box h3 { font-size: 20px; font-weight: 700; color: var(--primary); margin: 0 0 10px; }
+        .stat-box p  { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.65; }
+
+        @media (max-width: 768px) { .stat-row { grid-template-columns: 1fr; } .overview-section { padding: 56px 0; } }
+
+        /* ============================================================
+           PROCEEDINGS SECTION
+        ============================================================ */
+        .proceedings-section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+
+        .proceedings-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .proceedings-layout p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+        .proceedings-layout p:last-of-type { margin-bottom: 0; }
+
+        .proceedings-specs {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 36px 32px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .proceedings-specs h4 {
+            font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--text-muted);
+            margin: 0 0 20px;
+        }
+
+        .spec-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            padding: 12px 0; border-bottom: 1px solid #e2e8f0;
+        }
+
+        .spec-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .spec-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--accent); flex-shrink: 0; margin-top: 6px;
+        }
+
+        .spec-text { font-size: 14px; color: var(--text-main); line-height: 1.6; }
+        .spec-text strong { color: var(--primary); }
+
+        .deadline-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #fff8e1; border: 1px solid #ffe082;
+            border-radius: 8px; padding: 10px 16px;
+            font-size: 14px; font-weight: 600; color: #b45309;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .proceedings-layout { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* ============================================================
+           JOURNAL PATHWAYS
+        ============================================================ */
+        .journals-section { padding: 80px 0; background: var(--light-bg); border-bottom: 1px solid #f1f5f9; }
+
+        .journal-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .journal-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 36px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 8px 30px rgba(26,58,95,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .journal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(26,58,95,0.10);
+            border-color: rgba(255,180,0,0.4);
+        }
+
+        .journal-tag {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .tag-scopus  { background: #e8f0fe; color: #1a56db; }
+        .tag-special { background: #fef3c7; color: #92400e; }
+        .tag-ica     { background: #f0fdf4; color: #166534; }
+        .tag-cmap    { background: #fdf4ff; color: #7e22ce; }
+
+        .journal-card h3 {
+            font-size: 20px; font-weight: 700; color: var(--primary);
+            margin: 0 0 14px; line-height: 1.3;
+        }
+
+        .journal-card p {
+            font-size: 15px; color: var(--text-muted);
+            line-height: 1.75; margin: 0 0 24px; flex-grow: 1;
+        }
+
+        .journal-meta {
+            display: flex; flex-direction: column; gap: 8px;
+            padding-top: 20px; border-top: 1px solid #f1f5f9;
+        }
+
+        .meta-item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px; color: var(--text-muted);
+        }
+
+        .meta-item svg {
+            width: 14px; height: 14px;
+            stroke: var(--primary); fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .meta-item strong { color: var(--primary); }
+
+        .disclaimer-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-top: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .disclaimer-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+        .disclaimer-text { font-size: 14px; color: #92400e; line-height: 1.7; }
+        .disclaimer-text strong { color: #78350f; }
+
+        @media (max-width: 768px) { .journals-section { padding: 56px 0; } }
+
+        /* ============================================================
+           BANGKOK HUB REPORT
+        ============================================================ */
+        .report-section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+
+        .report-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .report-visual {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 28px;
+            padding: 56px 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 50px rgba(26,58,95,0.2);
+        }
+
+        .report-visual .report-icon { font-size: 64px; display: block; margin-bottom: 24px; }
+
+        .report-visual h3 { font-size: 24px; font-weight: 800; margin: 0 0 12px; }
+        .report-visual p  { font-size: 15px; opacity: 0.85; margin: 0 0 28px; line-height: 1.7; }
+
+        .report-date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 8px 20px;
+            border-radius: 50px;
+        }
+
+        .report-text h2 { font-size: 30px; font-weight: 700; color: var(--primary); margin: 0 0 20px; line-height: 1.3; }
+
+        .report-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+
+        .report-bullets {
+            list-style: none; padding: 0; margin: 24px 0 0;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+
+        .report-bullets li {
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 15px; color: var(--text-muted); line-height: 1.6;
+        }
+
+        .report-bullets li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .report-layout { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* ============================================================
+           TIMELINE SUMMARY
+        ============================================================ */
+        .timeline-section { padding: 80px 0; background: var(--light-bg); border-bottom: 1px solid #f1f5f9; }
+
+        .timeline-simple {
+            max-width: 700px;
+            margin: 48px auto 0;
+            position: relative;
+        }
+
+        .tl-row {
+            display: grid;
+            grid-template-columns: 120px 20px 1fr;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f1f5f9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tl-row:last-child { border-bottom: none; }
+
+        .tl-date {
+            font-size: 13px; font-weight: 700;
+            color: var(--accent);
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .tl-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+            flex-shrink: 0;
+            justify-self: center;
+        }
+
+        .tl-label { font-size: 15px; color: var(--text-main); font-weight: 500; line-height: 1.4; }
+
+        /* ============================================================
+           CTA
+        ============================================================ */
+        .cta {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta h2 { font-size: 36px; font-weight: 800; margin: 0 0 16px; color: white; }
+        .cta p  { font-size: 17px; opacity: 0.85; margin: 0 auto 36px; max-width: 600px; line-height: 1.7; }
+
+        .btn { padding: 14px 32px; border-radius: 8px; font-weight: 600; display: inline-block; margin: 8px; font-size: 15px; transition: var(--transition); }
+        .btn-white { background: var(--white); color: var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .cta { padding: 72px 20px; }
+            .cta h2 { font-size: 26px; }
+            .btn { display: block; margin: 8px auto; max-width: 260px; text-align: center; }
+        }
+
+        /* ============================================================
+           ORGANIZERS
+        ============================================================ */
+        .organizers { background: #f8fafc; padding: 64px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .org-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+        .org-group { display: flex; flex-direction: column; align-items: center; padding: 0 56px; }
+        .org-group-label { text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+        .org-logos { display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
+        .org-logos img { height: 64px; width: auto; object-fit: contain; opacity: 0.7; filter: grayscale(30%); transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease; }
+        .org-logos img:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.06); }
+        .org-divider { width: 1px; height: 72px; background: #e2e8f0; flex-shrink: 0; }
+
+        @media (max-width: 768px) {
+            .organizers { padding: 48px 0; }
+            .org-row    { flex-direction: column; gap: 36px; }
+            .org-group  { padding: 0 24px; width: 100%; }
+            .org-divider { width: 60px; height: 1px; }
+            .org-logos img { height: 50px; }
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .site-footer { background: var(--primary); color: rgba(255,255,255,0.65); padding: 60px 0 32px; }
+
+        .footer-top {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
+            padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px;
+        }
+
+        .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+        .footer-about  { font-size: 14px; line-height: 1.75; margin-top: 16px; }
+        .footer-col ul      { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li   { margin-bottom: 10px; }
+        .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--white); }
+
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 14px; line-height: 1.5; }
+        .footer-contact-item svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom a       { color: rgba(255,255,255,0.5); }
+        .footer-bottom a:hover { color: var(--white); }
+
+        @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px)  { .footer-top { grid-template-columns: 1fr; gap: 32px; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-group">
+                    <img src="im/Chula_Logo_Update_pp.png" class="logo" alt="Chula Logo">
+                    <img src="im/ICA26 regional hub - bangkok logo.jpg" class="logo" alt="ICA Logo">
+                </div>
+                <div class="site-title">
+                    <span>76th ANNUAL ICA</span>
+                    <span>REGIONAL HUB THAILAND</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" id="confInfoLink">Conference Information ▾</a>
+                        <ul class="dropdown-menu" id="confDropdown">
+                            <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                            <li><a href="publication.html">Publication</a></li>
+                            <li><a href="award.html">Award</a></li>
+                            <li><a href="visa.html">Visa Information</a></li>
+                            <li><a href="#">Travel Information</a></li>
+                            <li><a href="#">Blog Section</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Publication Opportunities</h1>
+            <p>ICA-TH 2026 offers multiple pathways to publish your research — from peer-reviewed conference proceedings to indexed international journals and a publicly accessible policy report.</p>
+        </div>
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="section-title">Three Pathways to Publication</h2>
+            <p class="overview-lead">Presenting at ICA-TH 2026 opens doors to recognised academic publication. Whether you seek a conference record, a journal article, or policy impact, we have designed pathways to support every type of scholar.</p>
+
+            <div class="stat-row">
+                <div class="stat-box">
+                    <span class="stat-icon">📄</span>
+                    <h3>Conference Proceedings</h3>
+                    <p>All accepted full papers are eligible for inclusion in the official digital proceedings, published with DOI assignment by July 2026.</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">📰</span>
+                    <h3>Journal Pathways</h3>
+                    <p>Selected presentations may be considered for submission to Scopus-indexed journals and a special issue on communication inequalities in Southeast Asia.</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">🗺️</span>
+                    <h3>Bangkok Hub Report</h3>
+                    <p>Key findings from the conference will be synthesised into a publicly accessible policy report for regional governments and civil society organisations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROCEEDINGS -->
+    <section class="proceedings-section">
+        <div class="container">
+            <h2 class="section-title">Conference Proceedings</h2>
+
+            <div class="proceedings-layout">
+                <div class="proceedings-text">
+                    <p>Authors who submit a full paper will be considered for inclusion in the official <strong>ICA-TH 2026 Conference Proceedings</strong>, published digitally with DOI assignment by 20 July 2026.</p>
+                    <p>All full papers undergo <strong>double-blind peer review</strong> by at least two members of the Scientific Programme Committee before acceptance into the proceedings.</p>
+                    <p>Inclusion in the proceedings does not preclude subsequent journal submission. The proceedings serve as a conference record, not a journal publication, and authors retain full rights to submit their work to journals following the conference.</p>
+                    <p>The proceedings will be made openly accessible online, ensuring maximum visibility for all contributing authors.</p>
+
+                    <div class="deadline-badge">
+                        📅 &nbsp; Full Paper Submission Deadline: <strong style="margin-left:6px;">20 May 2026</strong>
+                    </div>
+                </div>
+
+                <div class="proceedings-specs">
+                    <h4>Manuscript Requirements</h4>
+
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Length:</strong> 4,000–6,000 words, excluding references</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Citation style:</strong> APA 7th edition</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>File format:</strong> Microsoft Word (.docx) or PDF</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Font:</strong> Times New Roman or Arial, 12pt, double-spaced</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Keywords:</strong> 4–6 keywords required</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Language:</strong> English only</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-dot"></div>
+                        <div class="spec-text"><strong>Submission via:</strong> Official online portal only</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JOURNAL PATHWAYS -->
+    <section class="journals-section">
+        <div class="container">
+            <h2 class="section-title">Journal Pathways</h2>
+            <p class="section-intro" style="margin-top:16px;">ICA-TH 2026 is developing a pipeline of journal publication opportunities for outstanding conference submissions. Final editorial decisions rest entirely with independent journal editors.</p>
+
+            <div class="journal-cards">
+
+                <!-- AJPOR -->
+                <div class="journal-card">
+                    <span class="journal-tag tag-scopus">Scopus Indexed</span>
+                    <h3>Asian Journal for Public Opinion Research (AJPOR)</h3>
+                    <p>The official peer-reviewed quarterly journal of the Asian Network for Public Opinion Research (ANPOR). Conference presenters may submit for standard consideration; editors may extend invitations to selected presenters for expedited review.</p>
+                    <div class="journal-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>Indexed in <strong>Scopus</strong> and <strong>DOAJ</strong></span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <span>Open access · Quarterly</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                            <span>Publisher: ANPOR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Issue -->
+                <div class="journal-card">
+                    <span class="journal-tag tag-special">Special Issue</span>
+                    <h3>Special Issue — Communication Inequalities in Southeast Asia</h3>
+                    <p>The organising committee is in discussion with a partner journal regarding a dedicated special issue on communication inequalities in Southeast Asia. Authors whose work is a strong fit will be notified following the conference.</p>
+                    <div class="journal-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Subject to editorial board approval</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Journal name to be confirmed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CMAP -->
+                <div class="journal-card">
+                    <span class="journal-tag tag-cmap">Partner Journal</span>
+                    <h3>CMAP — Communication and Media Asia Pacific</h3>
+                    <p>The Faculty of Communication Arts journal, published by Chulalongkorn University. Selected works with strong regional focus may be considered for this publication in partnership with conference co-hosts.</p>
+                    <div class="journal-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            <span>Publisher: Chulalongkorn University</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Details to be confirmed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICA Affiliated -->
+                <div class="journal-card">
+                    <span class="journal-tag tag-ica">ICA Affiliated</span>
+                    <h3>Additional ICA-Affiliated Journals</h3>
+                    <p>The programme committee will circulate a curated list of relevant ICA-affiliated journals along with submission guidance at the conference. Authors will receive personalised recommendations based on their research focus.</p>
+                    <div class="journal-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            <span>Circulated at conference</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            <span>Personalised journal matching</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="disclaimer-box">
+                <div class="disclaimer-icon">⚠️</div>
+                <div class="disclaimer-text">
+                    <strong>Editorial Independence Notice:</strong> All journal pathways listed above are indicative. Final editorial decisions rest entirely with independent journal editors and are not within the organising committee's authority to guarantee. Submission to a conference does not constitute a commitment to publication.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BANGKOK HUB REPORT -->
+    <section class="report-section">
+        <div class="container">
+            <div class="report-layout">
+
+                <div class="report-visual">
+                    <span class="report-icon">📋</span>
+                    <h3>Bangkok Hub Report</h3>
+                    <p>A 20–30 page publicly accessible policy report synthesising key research findings and recommendations from the conference.</p>
+                    <span class="report-date-badge">Published: 30 September 2026</span>
+                </div>
+
+                <div class="report-text">
+                    <h2>Beyond the Conference — Policy Impact</h2>
+                    <p>The organising committee will produce the <strong>Bangkok Hub Report</strong>, a publicly accessible synthesis of the conference's most significant research findings and policy recommendations.</p>
+                    <p>The report is intended for circulation to policymakers, regional governments, civil society organisations, and ICA leadership — ensuring that scholarship from ICA-TH 2026 drives real-world impact beyond the academic community.</p>
+
+                    <ul class="report-bullets">
+                        <li>Contributing scholars will be credited in the report</li>
+                        <li>Distributed to regional governments and civil society organisations</li>
+                        <li>Shared with ICA leadership and international partners</li>
+                        <li>Publicly accessible and freely downloadable online</li>
+                        <li>Released by 30 September 2026</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title section-title--center">Publication Timeline</h2>
+
+            <div class="timeline-simple">
+                <div class="tl-row">
+                    <div class="tl-date">20 May 2026</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-label">Full Paper Submission Deadline</div>
+                </div>
+                <div class="tl-row">
+                    <div class="tl-date">6–7 June 2026</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-label">Conference Presentations</div>
+                </div>
+                <div class="tl-row">
+                    <div class="tl-date">20 July 2026</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-label">Conference Proceedings Published (Digital, with DOI)</div>
+                </div>
+                <div class="tl-row">
+                    <div class="tl-date">30 September 2026</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-label">Bangkok Hub Report Released</div>
+                </div>
+                <div class="tl-row">
+                    <div class="tl-date">TBC</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-label">Special Issue — Call for Submissions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Share Your Research?</h2>
+            <p>Submit your abstract and full paper to be considered for ICA-TH 2026 publication opportunities.</p>
+            <a class="btn btn-white" href="submission.html">Submit Your Abstract</a>
+            <a class="btn btn-outline" href="registration.html">Register to Attend</a>
+        </div>
+    </section>
+
+
+    <!-- ORGANIZERS -->
+    <section class="organizers">
+        <div class="container">
+            <div class="org-row">
+                <div class="org-group">
+                    <span class="org-group-label">Organized by</span>
+                    <div class="org-logos">
+                        <img src="im/LOGO_Eng.jpg" alt="Organizer 1">
+                        <img src="im/1008453.png" alt="Organizer 2">
+                    </div>
+                </div>
+                <div class="org-divider"></div>
+                <div class="org-group">
+                    <span class="org-group-label">In Partnership with</span>
+                    <div class="org-logos">
+                        <img src="im/logooo-1.jpg" alt="Partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <div style="margin-bottom: 4px;">
+                        <div style="color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1px; margin-bottom: 4px;">76TH ANNUAL ICA</div>
+                        <div style="color: var(--white); font-size: 17px; font-weight: 700;">Regional Hub Thailand</div>
+                    </div>
+                    <p class="footer-about">An official concurrent event of the 76th Annual ICA Conference, hosted at Chulalongkorn University, Bangkok — 6–7 June 2026.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                        <li><a href="visa.html">Visa Information</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="award.html">Awards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Faculty of Communication Arts,<br>Chulalongkorn University,<br>Bangkok, Thailand</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.65);">Contact Us</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <a href="https://www.icahdq.org" target="_blank" style="color: rgba(255,255,255,0.65);">icahdq.org</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ICA Thailand Hub · Faculty of Communication Arts, Chulalongkorn University</p>
+                <p><a href="#">Privacy Policy</a> · <a href="contact.html">Contact Us</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger    = document.getElementById('hamburger');
+            const mainNav      = document.getElementById('mainNav');
+            const toggleLink   = document.getElementById('confInfoLink');
+            const dropdownMenu = document.getElementById('confDropdown');
+
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+
+            toggleLink.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('active');
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                    hamburger.classList.remove('open');
+                    mainNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

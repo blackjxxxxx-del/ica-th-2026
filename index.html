@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICA-TH 2026 Conference | Regional Hub Thailand</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ============================================================
+           VARIABLES
+        ============================================================ */
+        :root {
+            --primary:    #1a3a5f;
+            --secondary:  #274c77;
+            --accent:     #ffb400;
+            --light-bg:   #f8fafc;
+            --white:      #ffffff;
+            --text-main:  #1e293b;
+            --text-muted: #64748b;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+
+        /* ============================================================
+           GLOBAL
+        ============================================================ */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+
+        /* ============================================================
+           NAVBAR
+        ============================================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 12px;
+            padding: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .site-title {
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .site-title span:first-child {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .site-title span:last-child {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            list-style: none;
+            padding: 12px 0;
+            margin: 0;
+            min-width: 250px;
+            display: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid #f1f5f9;
+        }
+
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 15px;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            color: var(--text-main) !important;
+            padding: 12px 24px;
+            font-weight: 500;
+        }
+
+        .dropdown-menu li:hover {
+            background: #f8fafc;
+        }
+
+        .dropdown-menu li:hover a {
+            color: var(--primary) !important;
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+
+            .hamburger { display: flex; }
+
+            .logo { width: 38px; height: 38px; }
+            .site-title span:last-child { font-size: 13px; }
+            .site-title span:first-child { display: none; }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-top: 1px solid #f1f5f9;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                display: none;
+            }
+
+            nav.open { display: block; }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 0;
+            }
+
+            .nav-menu > li > a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 15px;
+                border-bottom: 1px solid #f8fafc;
+            }
+
+            /* Mobile dropdown — inline expand */
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background: #f8fafc;
+                padding: 0;
+                margin: 0;
+                display: none;
+            }
+
+            .dropdown-menu.active { display: block; }
+
+            .dropdown-menu li a {
+                padding: 10px 36px !important;
+                font-size: 14px;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .dropdown::after { display: none; }
+        }
+
+
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu { display: block; margin-top: 15px; }
+        }
+
+
+        /* ============================================================
+           MOBILE — HERO & SECTIONS
+        ============================================================ */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+                background-attachment: scroll;
+            }
+            .hero-title-main  { font-size: 13px; letter-spacing: 3px; }
+            .hero-title-sub   { font-size: 28px; }
+            .hero-title-small { font-size: 20px; }
+            .hero-sub         { font-size: 15px; margin: 20px auto; }
+            .hero-meta        { font-size: 13px; padding: 6px 16px; }
+            .btn              { padding: 12px 22px; font-size: 14px; display: block; margin: 8px auto; max-width: 260px; text-align: center; }
+
+            .values           { padding: 60px 0; }
+            .value-grid       { grid-template-columns: 1fr; }
+            .value-box        { padding: 36px 28px; }
+
+            .about-parallax   { background-attachment: scroll; padding: 60px 16px; }
+            .about-glass-card { padding: 28px 20px; }
+            .about-lead-text  { font-size: 18px; }
+            .about-glass-card p { font-size: 16px; }
+            .about-stats-light { flex-wrap: wrap; gap: 24px; }
+
+            .important-dates-infographic { padding: 60px 0; }
+
+            .articles         { padding: 60px 0; }
+            .article-grid     { grid-template-columns: 1fr; }
+            .article-card:nth-child(n+2) { display: none; }
+        }
+        .hero {
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(15, 47, 87, 0.9) 0%, rgba(39, 76, 119, 0.7) 100%),
+                url("im/wat-arun-temple-bangkok-thailand.jpg") center / cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero-title-main  { font-size: 20px; font-weight: 400; letter-spacing: 5px; margin-bottom: 10px; }
+        .hero-title-sub   { font-size: 48px; font-weight: 800; margin: 0; line-height: 1.1; }
+        .hero-title-small { font-size: 32px; font-weight: 300; opacity: 0.9; margin-top: 5px; }
+
+        .hero-sub {
+            margin: 30px auto;
+            font-size: 18px;
+            max-width: 750px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-meta {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 8px;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-accent:hover {
+            background: #e6a300;
+            transform: translateY(-2px);
+        }
+
+
+        /* ============================================================
+           VALUES
+        ============================================================ */
+        .values {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .value-box {
+            background: white;
+            padding: 50px 35px;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .value-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px rgba(26, 58, 95, 0.10);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f4f8;
+            border-radius: 18px;
+        }
+
+        .value-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .value-box h3 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .value-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+
+        /* ============================================================
+           ABOUT (PARALLAX)
+        ============================================================ */
+        .about-parallax {
+            position: relative;
+            padding: 120px 0;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url("im/downtown-business-district-bangkok-night.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            width: 100%;
+            text-align: center;
+        }
+
+        .about-title-match {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .about-title-match::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .about-glass-card {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 50px rgba(26, 58, 95, 0.05);
+        }
+
+        .about-lead-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .about-glass-card p {
+            font-size: 18px;
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-stats-light {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(26, 58, 95, 0.1);
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-n {
+            display: block;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-l {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .about-parallax {
+                background-attachment: scroll;
+                padding: 80px 20px;
+            }
+            .about-glass-card    { padding: 30px 20px; }
+            .about-stats-light   { flex-wrap: wrap; gap: 30px; }
+        }
+
+
+        /* ============================================================
+           IMPORTANT DATES
+        ============================================================ */
+        .important-dates-infographic {
+            padding: 100px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 80px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60px; height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .infographic-line-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .infographic-line-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 15%; right: 15%;
+            height: 1px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .info-node {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-node:hover {
+            transform: translateY(-5px);
+        }
+
+        .node-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(26, 58, 95, 0.15);
+        }
+
+        .node-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .node-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .node-date {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            white-space: nowrap;
+        }
+
+        .node-info {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .infographic-line-wrapper {
+                flex-direction: column;
+                gap: 50px;
+                align-items: center;
+            }
+            .infographic-line-wrapper::before {
+                left: 25px; top: 0; bottom: 0;
+                width: 1px; height: auto;
+            }
+            .info-node {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                width: 100%;
+                max-width: 400px;
+            }
+            .node-text {
+                align-items: flex-start;
+                margin-left: 20px;
+            }
+            .node-circle {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+        }
+
+
+        /* ============================================================
+           ARTICLES
+        ============================================================ */
+        .articles {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .articles h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+            font-size: 32px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .articles h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f5f9;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-image         { height: 220px; overflow: hidden; }
+        .article-image img     { width: 100%; height: 100%; object-fit: cover; }
+        .article-card h3       { padding: 25px 25px 10px; font-size: 19px; color: var(--primary); margin: 0; }
+        .article-card p        { padding: 0 25px 20px; color: var(--text-muted); font-size: 14px; margin: 0; }
+        .article-card a        { padding: 0 25px 25px; display: inline-block; font-weight: 700; color: var(--secondary); font-size: 14px; }
+
+
+        /* ============================================================
+           ORGANIZERS
+        ============================================================ */
+        .organizers {
+            background: #f8fafc;
+            padding: 64px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .org-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .org-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 56px;
+        }
+
+        .org-group-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .org-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+        }
+
+        .org-logos img {
+            height: 64px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            filter: grayscale(30%);
+            transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .org-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.06);
+        }
+
+        .org-divider {
+            width: 1px;
+            height: 72px;
+            background: #e2e8f0;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .organizers    { padding: 48px 0; }
+            .org-row       { flex-direction: column; gap: 36px; }
+            .org-group     { padding: 0 24px; width: 100%; align-items: center; text-align: center; }
+            .org-divider   { width: 60px; height: 1px; }
+            .org-logos img { height: 50px; }
+        }
+
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .site-footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.65);
+            padding: 60px 0 32px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 32px;
+        }
+
+        .footer-brand .brand-text .brand-name { color: var(--white); }
+        .footer-brand .brand-text .brand-sup  { color: rgba(255, 255, 255, 0.45); }
+
+        .footer-about {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .footer-col h4 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul          { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li       { margin-bottom: 10px; }
+        .footer-col ul li a     { font-size: 14px; color: rgba(255, 255, 255, 0.65); transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--white); }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255, 255, 255, 0.4);
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a       { color: rgba(255, 255, 255, 0.5); }
+        .footer-bottom a:hover { color: var(--white); }
+
+        @media (max-width: 1024px) {
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-top    { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+         NAVBAR
+    ============================================================ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-group">
+                    <img src="im/Chula_Logo_Update_pp.png" class="logo" alt="Chula Logo">
+                    <img src="im/ICA26 regional hub - bangkok logo.jpg" class="logo" alt="ICA Logo">
+                </div>
+                <div class="site-title">
+                    <span>76th ANNUAL ICA</span>
+                    <span>REGIONAL HUB THAILAND</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" id="confInfoLink">Conference Information ▾</a>
+                        <ul class="dropdown-menu" id="confDropdown">
+                            <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                            <li><a href="Publication.html">Publication</a></li>
+                            <li><a href="Award.html">Award</a></li>
+                            <li><a href="visa.html">Visa Information</a></li>
+                            <li><a href="#">Travel Information</a></li>
+                            <li><a href="#">Blog Section</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-title-main">ICA-TH 2026</div>
+            <h1 class="hero-title-sub">Where Thailand-Mekong-Asian Region</h1>
+            <div class="hero-title-small">Bridges Divides and Amplifies Voices</div>
+            <p class="hero-sub">
+                A two-day hybrid conference connecting scholars, policymakers, and practitioners across Thailand,
+                the Mekong sub-region, and the Global South.
+            </p>
+            <div class="hero-meta">
+                6–7 June 2026 • Bangkok • Chulalongkorn University
+            </div>
+            <div class="hero-buttons">
+                <a href="submit-abstract.html" class="btn btn-primary">Submit Your Abstract</a>
+                <a href="registration-form.html" class="btn btn-accent">Register to Attend</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         VALUES
+    ============================================================ -->
+    <section class="values">
+        <div class="container">
+            <div class="value-grid">
+
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Regional voices,<br>global stage</h3>
+                    <p>Your research presented to the 76th ICA Annual Conference audience through our live-streamed Global South Plenary.</p>
+                </div>
+
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <h3>Capacity that<br>lasts</h3>
+                    <p>Publication mentorship, methods masterclasses, and Mekong research clinics designed for emerging scholars.</p>
+                </div>
+
+                <div class="value-box">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM14 14h6v6h-6zM4 14h6v6H4z"/></svg>
+                    </div>
+                    <h3>Transforming<br>knowledge systems</h3>
+                    <p>Integrating hybrid access, cross-regional research collaboration, and reshaping global knowledge hierarchies.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section class="about-parallax">
+        <div class="container">
+            <h2 class="about-title-match">About the Conference</h2>
+
+            <div class="about-glass-card">
+                <p class="about-lead-text">
+                    The ICA Regional Hub Thailand 2026 is an official concurrent event of the 76th Annual Conference of the International Communication Association.
+                </p>
+                <p>
+                    Hosted at <strong>Chulalongkorn University</strong> in Bangkok on 6–7 June 2026, the Hub brings together 200 scholars, practitioners, and policymakers to examine communication inequalities through a Southeast Asian lens.
+                </p>
+
+                <div class="about-stats-light">
+                    <div class="stat-box">
+                        <span class="stat-n">200+</span>
+                        <span class="stat-l">Global Scholars</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-n">02</span>
+                        <span class="stat-l">Intensive Days</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-n">Hybrid</span>
+                        <span class="stat-l">Access Mode</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         IMPORTANT DATES
+    ============================================================ -->
+    <section class="important-dates-infographic">
+        <div class="container">
+            <h2 class="section-title">Important Dates</h2>
+
+            <div class="infographic-line-wrapper">
+
+                <div class="info-node">
+                    <div class="node-circle">01</div>
+                    <div class="node-text">
+                        <span class="node-label">Abstract Submission</span>
+                        <span class="node-date">15 Mar - 20 May 2026</span>
+                    </div>
+                </div>
+
+                <div class="info-node">
+                    <div class="node-circle">02</div>
+                    <div class="node-text">
+                        <span class="node-label">Notification</span>
+                        <span class="node-date">Registration End 31 May 2026</span>
+                    </div>
+                </div>
+
+                <div class="info-node">
+                    <div class="node-circle">03</div>
+                    <div class="node-text">
+                        <span class="node-label">Conference Dates</span>
+                        <span class="node-date">6–7 Jun 2026</span>
+                        <span class="node-info">📍 Bangkok &amp; Online</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         ARTICLES
+    ============================================================ -->
+    <section class="articles">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>Latest Articles</h2>
+            </div>
+
+            <div class="article-grid">
+
+                <div class="article-card">
+                    <div class="article-image"><img src="im/hands-interacting-with-digital-social-media-elements.jpg" alt="News 1"></div>
+                    <h3>Communication Inequalities in Southeast Asia</h3>
+                    <p>Exploring emerging research trends and regional perspectives.</p>
+                    <a href="#">Read more →</a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image"><img src="im/beautiful-view-bay-with-fishing-boats-near-sandy-shore.jpg" alt="News 2"></div>
+                    <h3>Mekong Media Collaboration</h3>
+                    <p>New networks for cross-border communication research.</p>
+                    <a href="#">Read more →</a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image"><img src="im/3d-rendering-planet-earth.jpg" alt="News 3"></div>
+                    <h3>Global South Knowledge Systems</h3>
+                    <p>Reframing communication theory through regional scholarship.</p>
+                    <a href="#">Read more →</a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="articles.html" style="font-weight: 700; color: var(--primary);">View all articles →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         ORGANIZERS
+    ============================================================ -->
+    <section class="organizers">
+        <div class="container">
+            <div class="org-row">
+
+                <div class="org-group">
+                    <span class="org-group-label">Organized by</span>
+                    <div class="org-logos">
+                        <img src="im/LOGO_Eng.jpg" alt="Organizer 1">
+                        <img src="im/1008453.png" alt="Organizer 2">
+                    </div>
+                </div>
+
+                <div class="org-divider"></div>
+
+                <div class="org-group">
+                    <span class="org-group-label">In Partnership with</span>
+                    <div class="org-logos">
+                        <img src="im/logooo-1.jpg" alt="Partner">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <div class="brand-text" style="margin-bottom: 16px;">
+                        <div style="color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1px; margin-bottom: 4px;">76TH ANNUAL ICA</div>
+                        <div style="color: var(--white); font-size: 17px; font-weight: 700;">Regional Hub Thailand</div>
+                    </div>
+                    <p class="footer-about">
+                        An official concurrent event of the 76th Annual ICA Conference, hosted at Chulalongkorn University, Bangkok — 6–7 June 2026.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                        <li><a href="#">Visa Information</a></li>
+                        <li><a href="#">Publication</a></li>
+                        <li><a href="#">Awards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Faculty of Communication Arts,<br>Chulalongkorn University,<br>Bangkok, Thailand</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.65);">Contact Us</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <a href="https://www.icahdq.org" target="_blank" style="color: rgba(255,255,255,0.65);">icahdq.org</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ICA Thailand Hub · Faculty of Communication Arts, Chulalongkorn University</p>
+                <p>
+                    <a href="#">Privacy Policy</a> ·
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger    = document.getElementById('hamburger');
+            const mainNav      = document.getElementById('mainNav');
+            const toggleLink   = document.getElementById('confInfoLink');
+            const dropdownMenu = document.getElementById('confDropdown');
+
+            // Hamburger toggle
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+
+            // Mobile: tap Conference Information to expand sub-menu
+            toggleLink.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('active');
+                }
+            });
+
+            // Close nav when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                    hamburger.classList.remove('open');
+                    mainNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

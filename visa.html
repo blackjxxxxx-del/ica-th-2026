@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Information | ICA-TH 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary:    #1a3a5f;
+            --secondary:  #274c77;
+            --accent:     #ffb400;
+            --light-bg:   #f8fafc;
+            --white:      #ffffff;
+            --text-main:  #1e293b;
+            --text-muted: #64748b;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1200px; margin: auto; padding: 0 24px; }
+        a { text-decoration: none; transition: var(--transition); }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+        .nav-left { display: flex; align-items: center; gap: 20px; }
+        .logo-group { display: flex; gap: 12px; }
+        .logo { width: 50px; height: 50px; object-fit: contain; }
+        .site-title { color: var(--primary); display: flex; flex-direction: column; line-height: 1.2; }
+        .site-title span:first-child { font-size: 11px; font-weight: 500; letter-spacing: 1px; color: var(--text-muted); }
+        .site-title span:last-child  { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+        .nav-menu { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu a { color: var(--secondary); font-size: 14px; font-weight: 600; }
+        .nav-menu a:hover { color: var(--accent); }
+        .dropdown { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; background: white; list-style: none; padding: 12px 0; margin: 0; min-width: 250px; display: none; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.12); border: 1px solid #f1f5f9; }
+        .dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 15px; }
+        .dropdown-menu.active { display: block; }
+        .dropdown-menu li a { color: var(--text-main) !important; padding: 12px 24px; font-weight: 500; display: block; }
+        .dropdown-menu li:hover { background: #f8fafc; }
+        .dropdown-menu li:hover a { color: var(--primary) !important; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        @media (min-width: 769px) { .dropdown:hover .dropdown-menu { display: block; margin-top: 15px; } }
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+            .hamburger { display: flex; }
+            .logo { width: 38px; height: 38px; }
+            .site-title span:last-child  { font-size: 13px; }
+            .site-title span:first-child { display: none; }
+            nav { position: absolute; top: 100%; left: 0; width: 100%; background: white; border-top: 1px solid #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: none; }
+            nav.open { display: block; }
+            .nav-menu { flex-direction: column; align-items: stretch; gap: 0; padding: 12px 0; }
+            .nav-menu > li > a { display: block; padding: 12px 24px; font-size: 15px; border-bottom: 1px solid #f8fafc; }
+            .dropdown-menu { position: static; box-shadow: none; border: none; border-radius: 0; background: #f8fafc; padding: 0; margin: 0; display: none; }
+            .dropdown-menu.active { display: block; }
+            .dropdown-menu li a { padding: 10px 36px !important; font-size: 14px; border-bottom: 1px solid #f1f5f9; }
+            .dropdown::after { display: none; }
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background:
+                linear-gradient(135deg, rgba(15,47,87,0.88) 0%, rgba(39,76,119,0.75) 100%),
+                url("im/wat-arun-temple-bangkok-thailand.jpg") center / cover no-repeat;
+            background-attachment: fixed;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 { font-size: 48px; font-weight: 800; margin: 0 0 20px; line-height: 1.1; }
+        .hero p  { font-size: 18px; max-width: 800px; margin: 0 auto; opacity: 0.9; font-weight: 300; line-height: 1.7; }
+        @media (max-width: 768px) {
+            .hero { padding: 80px 20px; background-attachment: scroll; }
+            .hero h1 { font-size: 30px; }
+            .hero p  { font-size: 15px; }
+        }
+
+        /* ── SECTIONS ── */
+        .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+        .section-alt { background: var(--light-bg); }
+
+        .section-title {
+            font-size: 32px; font-weight: 700; color: var(--primary);
+            margin: 0 0 16px; position: relative; padding-bottom: 16px;
+            display: block; text-align: center;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 50px; height: 4px; background: var(--accent); border-radius: 2px;
+        }
+        .section-intro {
+            font-size: 17px; color: var(--text-muted);
+            max-width: 700px; line-height: 1.8; margin: 16px auto 56px;
+            text-align: center;
+        }
+        @media (max-width: 768px) { .section { padding: 56px 0; } .section-title { font-size: 26px; } }
+
+        /* ── ALERT BANNER ── */
+        .alert-banner {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 16px;
+            padding: 24px 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            max-width: 820px;
+            margin: 0 auto 56px;
+        }
+        .alert-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+        .alert-text { font-size: 15px; color: #92400e; line-height: 1.7; }
+        .alert-text strong { color: #78350f; }
+
+        /* ── STEPS ── */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .step-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 32px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 8px 30px rgba(26,58,95,0.05);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+        .step-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(26,58,95,0.10); }
+        .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px; border-radius: 14px;
+            background: var(--primary); color: var(--accent);
+            font-size: 18px; font-weight: 800; margin-bottom: 20px;
+        }
+        .step-card h3 { font-size: 18px; font-weight: 700; color: var(--primary); margin: 0 0 12px; }
+        .step-card p  { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.7; }
+        @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+
+        /* ── TWO COLUMN LAYOUT ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 48px;
+        }
+        @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
+
+        .info-block h3 { font-size: 20px; font-weight: 700; color: var(--primary); margin: 0 0 16px; }
+        .info-block p  { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0 0 14px; }
+        .info-block p:last-child { margin-bottom: 0; }
+
+        /* ── CHECKLIST ── */
+        .checklist {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .checklist li {
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 15px; color: var(--text-muted); line-height: 1.6;
+            background: white; border-radius: 12px;
+            padding: 14px 18px; border: 1px solid #f1f5f9;
+        }
+        .checklist li::before {
+            content: '✓';
+            color: white; background: var(--primary);
+            width: 20px; height: 20px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 700; flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── INVITATION LETTER CARD ── */
+        .letter-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 28px;
+            padding: 48px 40px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(26,58,95,0.2);
+        }
+        .letter-card .letter-icon { font-size: 52px; display: block; margin-bottom: 20px; }
+        .letter-card h3 { font-size: 22px; font-weight: 800; margin: 0 0 16px; }
+        .letter-card p  { font-size: 15px; opacity: 0.88; line-height: 1.75; margin: 0 0 28px; }
+        .letter-detail {
+            background: rgba(255,255,255,0.12);
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-size: 14px; opacity: 0.9; line-height: 1.6;
+            text-align: left;
+        }
+        .letter-detail p { margin: 0 0 8px; opacity: 1; font-size: 14px; }
+        .letter-detail p:last-child { margin: 0; }
+        .letter-detail strong { color: var(--accent); }
+
+        /* ── TIMELINE ── */
+        .visa-timeline {
+            max-width: 640px;
+            margin: 48px auto 0;
+        }
+        .vtl-row {
+            display: flex; align-items: center; gap: 20px;
+            padding: 18px 0; border-bottom: 1px solid #e2e8f0;
+        }
+        .vtl-row:last-child { border-bottom: none; }
+        .vtl-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align: center; }
+        .vtl-body h4 { font-size: 15px; font-weight: 700; color: var(--primary); margin: 0 0 4px; }
+        .vtl-body p  { font-size: 13px; color: var(--text-muted); margin: 0; }
+
+        /* ── RESOURCE BOX ── */
+        .resource-box {
+            background: white;
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 36px 32px;
+            text-align: center;
+            max-width: 600px;
+            margin: 48px auto 0;
+        }
+        .resource-box h3 { font-size: 20px; font-weight: 700; color: var(--primary); margin: 0 0 12px; }
+        .resource-box p  { font-size: 15px; color: var(--text-muted); margin: 0 0 24px; line-height: 1.7; }
+        .btn-accent {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 700; font-size: 15px;
+            padding: 14px 32px; border-radius: 8px;
+            transition: var(--transition);
+        }
+        .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,180,0,0.3); }
+
+        /* ── ACCESSIBILITY ── */
+        .access-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .access-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 28px;
+            border: 1px solid #f1f5f9;
+            display: flex; gap: 20px; align-items: flex-start;
+            transition: var(--transition);
+        }
+        .access-card:hover { box-shadow: 0 12px 32px rgba(26,58,95,0.08); transform: translateY(-4px); }
+        .access-icon { font-size: 32px; flex-shrink: 0; }
+        .access-card h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin: 0 0 8px; }
+        .access-card p  { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.65; }
+        @media (max-width: 640px) { .access-row { grid-template-columns: 1fr; } }
+
+        /* ── CTA ── */
+        .cta { background: var(--primary); color: white; text-align: center; padding: 100px 20px; }
+        .cta h2 { font-size: 36px; font-weight: 800; margin: 0 0 16px; color: white; }
+        .cta p  { font-size: 17px; opacity: 0.85; margin: 0 auto 36px; max-width: 600px; line-height: 1.7; }
+        .btn { padding: 14px 32px; border-radius: 8px; font-weight: 600; display: inline-block; margin: 8px; font-size: 15px; transition: var(--transition); }
+        .btn-white { background: var(--white); color: var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        @media (max-width: 768px) {
+            .cta { padding: 72px 20px; }
+            .cta h2 { font-size: 26px; }
+            .btn { display: block; margin: 8px auto; max-width: 260px; text-align: center; }
+        }
+
+        /* ── ORGANIZERS ── */
+        .organizers { background: #f8fafc; padding: 64px 0; border-top: 1px solid #e2e8f0; }
+        .org-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+        .org-group { display: flex; flex-direction: column; align-items: center; padding: 0 56px; }
+        .org-group-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; text-align: center; }
+        .org-logos { display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
+        .org-logos img { height: 64px; width: auto; object-fit: contain; opacity: 0.7; filter: grayscale(30%); transition: opacity 0.3s, transform 0.3s, filter 0.3s; }
+        .org-logos img:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.06); }
+        .org-divider { width: 1px; height: 72px; background: #e2e8f0; flex-shrink: 0; }
+        @media (max-width: 768px) {
+            .organizers { padding: 48px 0; }
+            .org-row    { flex-direction: column; gap: 36px; }
+            .org-group  { padding: 0 24px; width: 100%; align-items: center; text-align: center; }
+            .org-divider { width: 60px; height: 1px; }
+            .org-logos img { height: 50px; }
+        }
+
+        /* ── FOOTER ── */
+        .site-footer { background: var(--primary); color: rgba(255,255,255,0.65); padding: 60px 0 32px; }
+        .footer-top { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px; }
+        .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+        .footer-about { font-size: 14px; line-height: 1.75; margin-top: 16px; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.65); }
+        .footer-col ul li a:hover { color: var(--white); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 14px; line-height: 1.5; }
+        .footer-contact-item svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom a { color: rgba(255,255,255,0.5); }
+        .footer-bottom a:hover { color: var(--white); }
+        @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px)  { .footer-top { grid-template-columns: 1fr; gap: 32px; } .footer-bottom { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-group">
+                    <img src="im/Chula_Logo_Update_pp.png" class="logo" alt="Chula Logo">
+                    <img src="im/ICA26 regional hub - bangkok logo.jpg" class="logo" alt="ICA Logo">
+                </div>
+                <div class="site-title">
+                    <span>76th ANNUAL ICA</span>
+                    <span>REGIONAL HUB THAILAND</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" id="confInfoLink">Conference Information ▾</a>
+                        <ul class="dropdown-menu" id="confDropdown">
+                            <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                            <li><a href="publication.html">Publication</a></li>
+                            <li><a href="award.html">Award</a></li>
+                            <li><a href="visa.html">Visa Information</a></li>
+                            <li><a href="#">Travel Information</a></li>
+                            <li><a href="#">Blog Section</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Visa Information</h1>
+            <p>Everything international delegates need to know about entering Thailand for ICA-TH 2026, including visa requirements, invitation letters, and arrival tips.</p>
+        </div>
+    </section>
+
+
+    <!-- ALERT -->
+    <section class="section">
+        <div class="container">
+            <div class="alert-banner">
+                <div class="alert-icon">⏱️</div>
+                <div class="alert-text">
+                    <strong>Apply Early.</strong> Thai visa processing times vary by country and embassy. We strongly recommend applying at least <strong>6–8 weeks before the conference</strong> (i.e. by mid-April 2026 at the latest). Do not wait until after abstract acceptance to begin your visa process.
+                </div>
+            </div>
+
+            <h2 class="section-title">Do You Need a Visa?</h2>
+            <p class="section-intro">Thailand offers visa-free or visa-on-arrival entry to citizens of many countries. Check your eligibility before applying for a full tourist or conference visa.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Check Your Eligibility</h3>
+                    <p>Visit the official Thai e-Visa portal at <strong>thaievisa.go.th</strong> to check whether your country requires a visa, is eligible for visa-on-arrival, or qualifies for visa-free entry.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Apply Online or at Embassy</h3>
+                    <p>If a visa is required, apply through the Thai e-Visa system online or visit your nearest Royal Thai Embassy or Consulate. Conference delegates typically apply for a Tourist Visa (TR) or Non-Immigrant Visa.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>Request an Invitation Letter</h3>
+                    <p>An official invitation letter from ICA-TH 2026 is available to all confirmed registered delegates. Request yours after completing registration — see below for details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INVITATION LETTER -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Official Invitation Letter</h2>
+            <p class="section-intro">A formal invitation letter on official letterhead is available to all delegates who have completed registration. This letter supports your visa application.</p>
+
+            <div class="two-col">
+
+                <div class="info-block">
+                    <h3>What the Letter Includes</h3>
+                    <p>The official invitation letter confirms your status as a registered delegate or presenter at ICA-TH 2026. It includes conference details, your name, registration status, and the organiser's institutional information.</p>
+                    <p>This letter is for visa application support purposes only and does not constitute a guarantee of visa approval. Final decisions rest entirely with Thai immigration authorities.</p>
+
+                    <ul class="checklist" style="margin-top: 20px;">
+                        <li>Your full name and nationality</li>
+                        <li>Conference name, dates, and venue</li>
+                        <li>Your registration category (presenter / delegate)</li>
+                        <li>Organiser name and institutional affiliation</li>
+                        <li>Official signature and institutional stamp</li>
+                    </ul>
+                </div>
+
+                <div class="letter-card">
+                    <span class="letter-icon">📩</span>
+                    <h3>How to Request Your Letter</h3>
+                    <p>Invitation letters are issued after confirmed registration. To request yours, email us with your registration confirmation.</p>
+                    <div class="letter-detail">
+                        <p><strong>Step 1:</strong> Complete your registration at the registration page</p>
+                        <p><strong>Step 2:</strong> Email <strong>admin-icathai@gmail.com</strong> with subject line: "Invitation Letter Request – [Your Full Name]"</p>
+                        <p><strong>Step 3:</strong> Include your registration confirmation number</p>
+                        <p><strong>Processing time:</strong> 3–5 business days</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Recommended Visa Timeline</h2>
+            <p class="section-intro">Plan your visa application around these key milestones to avoid delays.</p>
+
+            <div class="visa-timeline">
+                <div class="vtl-row">
+                    <div class="vtl-icon">📋</div>
+                    <div class="vtl-body">
+                        <h4>15 March 2026 — Abstract Submission Opens</h4>
+                        <p>Begin checking visa requirements now, even before your abstract is accepted.</p>
+                    </div>
+                </div>
+                <div class="vtl-row">
+                    <div class="vtl-icon">✅</div>
+                    <div class="vtl-body">
+                        <h4>By 1 April 2026 — Start Visa Application</h4>
+                        <p>We recommend starting your application by this date to allow sufficient processing time.</p>
+                    </div>
+                </div>
+                <div class="vtl-row">
+                    <div class="vtl-icon">📬</div>
+                    <div class="vtl-body">
+                        <h4>Rolling until 5 May 2026 — Acceptance Notifications</h4>
+                        <p>Request your invitation letter immediately after receiving your acceptance and completing registration.</p>
+                    </div>
+                </div>
+                <div class="vtl-row">
+                    <div class="vtl-icon">⚠️</div>
+                    <div class="vtl-body">
+                        <h4>By 10 May 2026 — Visa Application Deadline (Recommended)</h4>
+                        <p>Submit your visa application no later than this date to allow 6–8 weeks for processing before the conference.</p>
+                    </div>
+                </div>
+                <div class="vtl-row">
+                    <div class="vtl-icon">✈️</div>
+                    <div class="vtl-body">
+                        <h4>5–7 June 2026 — Conference</h4>
+                        <p>Welcome Reception on 5 June. Main conference 6–7 June at Mandarin Hotel, Bangkok.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RESOURCES & ACCESSIBILITY -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Resources &amp; Support</h2>
+            <p class="section-intro">Useful links and support options for international delegates travelling to Bangkok.</p>
+
+            <div class="resource-box">
+                <h3>Official Thai e-Visa Portal</h3>
+                <p>Check your visa requirements, eligibility, and apply online through the Royal Thai Government's official e-Visa system.</p>
+                <a href="https://www.thaievisa.go.th" target="_blank" class="btn-accent">Visit thaievisa.go.th ↗</a>
+            </div>
+
+            <div class="access-row" style="margin-top: 48px;">
+                <div class="access-card">
+                    <div class="access-icon">♿</div>
+                    <div>
+                        <h3>Accessibility</h3>
+                        <p>The Mandarin Hotel Bangkok and Faculty of Communication Arts are wheelchair accessible. Please contact us in advance if you have specific accessibility requirements.</p>
+                    </div>
+                </div>
+                <div class="access-card">
+                    <div class="access-icon">💻</div>
+                    <div>
+                        <h3>Virtual Attendance</h3>
+                        <p>If your visa application is unsuccessful, you may switch to virtual presenter or delegate status. Contact us as early as possible to arrange this.</p>
+                    </div>
+                </div>
+                <div class="access-card">
+                    <div class="access-icon">🌏</div>
+                    <div>
+                        <h3>Mekong-Region Scholars</h3>
+                        <p>Scholars from Laos, Cambodia, Vietnam, and Myanmar may be eligible for fee waivers. Contact us before 1 April 2026 to enquire.</p>
+                    </div>
+                </div>
+                <div class="access-card">
+                    <div class="access-icon">✉️</div>
+                    <div>
+                        <h3>Need Help?</h3>
+                        <p>For visa-related enquiries, email <strong>admin-icathai@gmail.com</strong>. Please allow 3–5 business days for a response.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Join Us in Bangkok?</h2>
+            <p>Register now to receive your invitation letter and secure your place at ICA-TH 2026.</p>
+            <a class="btn btn-white" href="registration.html">Register Now</a>
+            <a class="btn btn-outline" href="contact.html">Contact Us</a>
+        </div>
+    </section>
+
+
+    <!-- ORGANIZERS -->
+    <section class="organizers">
+        <div class="container">
+            <div class="org-row">
+                <div class="org-group">
+                    <span class="org-group-label">Organized by</span>
+                    <div class="org-logos">
+                        <img src="im/LOGO_Eng.jpg" alt="Organizer 1">
+                        <img src="im/1008453.png" alt="Organizer 2">
+                    </div>
+                </div>
+                <div class="org-divider"></div>
+                <div class="org-group">
+                    <span class="org-group-label">In Partnership with</span>
+                    <div class="org-logos">
+                        <img src="im/logooo-1.jpg" alt="Partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <div style="margin-bottom: 4px;">
+                        <div style="color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1px; margin-bottom: 4px;">76TH ANNUAL ICA</div>
+                        <div style="color: var(--white); font-size: 17px; font-weight: 700;">Regional Hub Thailand</div>
+                    </div>
+                    <p class="footer-about">An official concurrent event of the 76th Annual ICA Conference, hosted at Chulalongkorn University, Bangkok — 6–7 June 2026.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="venue.html">Venue &amp; Accommodation</a></li>
+                        <li><a href="visa.html">Visa Information</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="award.html">Awards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Faculty of Communication Arts,<br>Chulalongkorn University,<br>Bangkok, Thailand</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.65);">Contact Us</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <a href="https://www.icahdq.org" target="_blank" style="color: rgba(255,255,255,0.65);">icahdq.org</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ICA Thailand Hub · Faculty of Communication Arts, Chulalongkorn University</p>
+                <p><a href="#">Privacy Policy</a> · <a href="contact.html">Contact Us</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger    = document.getElementById('hamburger');
+            const mainNav      = document.getElementById('mainNav');
+            const toggleLink   = document.getElementById('confInfoLink');
+            const dropdownMenu = document.getElementById('confDropdown');
+
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('open');
+                mainNav.classList.toggle('open');
+            });
+
+            toggleLink.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('active');
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                    hamburger.classList.remove('open');
+                    mainNav.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
